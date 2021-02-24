@@ -2,7 +2,7 @@
  * @param {number[]} nums
  */
 var NumArray = function (nums) {
-  return nums;
+  this.nums = nums;
 };
 
 /**
@@ -11,8 +11,13 @@ var NumArray = function (nums) {
  * @return {number}
  */
 NumArray.prototype.sumRange = function (i, j) {
-  console.log(NumArray);
-  for (let i = i; i <= j; i++) {}
+  sum = 0;
+  if (i <= j && j <= this.nums.length) {
+    for (let k = i; k <= j; k++) {
+      sum += this.nums[k];
+    }
+  }
+  return sum;
 };
 
 /**
@@ -20,4 +25,4 @@ NumArray.prototype.sumRange = function (i, j) {
  */
 
 var obj = new NumArray([-2, 0, 3, -5, 2, -1]);
-var param_1 = obj.sumRange(0, 2);
+obj.sumRange(0, 5);
