@@ -31,5 +31,22 @@ var isPalindrome = function (s) {
   return equals(chars, reverseArr);
 };
 
+//Two Pointers used
+var isPalindrome2 = function (s) {
+  const re = /[^a-zA-Z\d\s]/g;
+  s = s.split(/\s/).join('').replace(re, '').toLowerCase();
+  let arr = [...s];
+  let l = 0,
+    r = arr.length - 1;
+
+  while (l < r) {
+    if (arr[l] != arr[r]) {
+      return false;
+    }
+    l++, r--;
+  }
+  return true;
+};
+
 let res = isPalindrome('A man, a plan, a canal: Panama');
 console.log(res);
