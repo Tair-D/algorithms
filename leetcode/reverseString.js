@@ -6,7 +6,7 @@ var reverseString = function (s) {
     s[start++] = s[end];
     s[end--] = tmp;
   }
-  console.log(s);
+  return s;
 };
 
 let res = reverseString(['h', 'e', 'l', 'l', 'o']);
